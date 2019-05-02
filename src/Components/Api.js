@@ -48,10 +48,6 @@ export default class CardList extends React.Component {
           cardsDetailed.price = apiResult.prices.usd;
 
           Cardsjson.push(cardsDetailed);
-          // console.log(cardsDetailed);
-          // console.log(res);
-          // console.log(res.data.name);
-
 
         });
       })
@@ -67,20 +63,16 @@ export default class CardList extends React.Component {
   
   render() {
     if(this.state.apiFetch === true){
-    //   const getNestedObject = (nestedObj, pathArr) => {
-    //     return pathArr.reduce((obj, key) =>
-    //         (obj && obj[key] !== 'undefined') ? obj[key] : undefined, nestedObj);
-    // }
-      // for(let i = 0; i< this.state.cardState.length; i++){
-        const Test = this.state.cardState.map(card => (
-              <div className="cardCss" key={card.name}>{card.name}</div>
-            )
-        ); 
-      // }
+
+        // const Test = this.state.cardState.map(card => (
+        //       <div className="cardCss" key={card.name}>{card.name}</div>
+        //     )
+        // ); 
         return(
           <div>
-          {Test}
-          {console.log(Test)}
+          {/* {Test} */}
+          {this.state.cardState.map(card => <div> {card.name} {console.log(card)}</div>)} 
+          {/* {console.log(Test)} */}
           {console.log(this.state.cardState)}
 
           </div>
@@ -92,19 +84,5 @@ export default class CardList extends React.Component {
         <h1>Hello World!</h1>
       )
     }
-
-    // return (
-    //   <div>
-    //     <h1>{this.state.cardState}</h1>
-    //     {console.log(this.state.cardState)}
-    //     {this.state.cardState.forEach(card =>{
-    //       for(var i = 0; i<= card.length; i++){
-    //         console.log(card[i])
-    //       }
-    //       console.log(card)
-    //       // only logs Loading...
-    //     })}
-    //     </div>      
-    //   )
     }
   }
