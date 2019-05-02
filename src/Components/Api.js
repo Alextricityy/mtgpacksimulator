@@ -58,7 +58,9 @@ export default class CardList extends React.Component {
     })
     // let parsedCardsjson = JSON.parse(Cardsjson)
     this.setState({ cardState: Cardsjson })
-    this.setState({ apiFetch: true })
+    // if(this.cardState === Cardsjson){
+      this.setState({ apiFetch: true })
+    // }
 
     
   }
@@ -69,22 +71,22 @@ export default class CardList extends React.Component {
     //     return pathArr.reduce((obj, key) =>
     //         (obj && obj[key] !== 'undefined') ? obj[key] : undefined, nestedObj);
     // }
-      for(let i = 0; i<= 14; i++){
+      // for(let i = 0; i< this.state.cardState.length; i++){
+        const Test = this.state.cardState.map(card => (
+              <div className="cardCss" key={card.name}>{card.name}</div>
+            )
+        ); 
+      // }
         return(
           <div>
-            {console.log(this.state.cardState)}
-            {/* {console.log(this.state.cardState[i].name)} */}
-
-            {/* {console.log(getNestedObject(this.state.cardState, ['name']))} */}
-            
-            {this.state.cardState.foreach(card =>{
-              console.log(card.name)
-            })}
+          {Test}
+          {console.log(Test)}
+          {console.log(this.state.cardState)}
 
           </div>
-          
+
         )
-      }
+    
     }else{
       return(
         <h1>Hello World!</h1>
