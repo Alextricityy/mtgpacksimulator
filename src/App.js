@@ -6,9 +6,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Api></Api>
-      </header>
+      <h1>Mtg</h1>
+      <Api></Api>
+
     </div>
   );
 }
